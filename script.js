@@ -5,6 +5,8 @@ const emptyImage = document.getElementById("empty-cart-image");
 const emptyText = document.getElementById("empty-cart-text");
 const totalPrice = document.getElementById("total-price");
 const orderTotal = document.querySelector(".order-total");
+const carbonBox = document.querySelector(".carbon-box");
+const confirmBtn = document.querySelector(".confirm-btn");
 
 let cart = [];
 
@@ -67,10 +69,14 @@ function updateCart() {
         emptyImage.style.display = "none";
         emptyText.style.display = "none";
         orderTotal.style.display = "flex";
+        carbonBox.style.display = "flex";
+        confirmBtn.style.display = "block";
     } else {
         emptyImage.style.display = "block";
         emptyText.style.display = "block";
         orderTotal.style.display = "none";
+        carbonBox.style.display = "none";
+        confirmBtn.style.display = "none";
     }
 
     cart.forEach((item) => {
