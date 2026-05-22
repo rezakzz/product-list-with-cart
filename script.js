@@ -7,6 +7,10 @@ const totalPrice = document.getElementById("total-price");
 const orderTotal = document.querySelector(".order-total");
 const carbonBox = document.querySelector(".carbon-box");
 const confirmBtn = document.querySelector(".confirm-btn");
+const modalOverlay = document.getElementById("modal-overlay");
+const modalItems = document.getElementById("modal-items");
+const modalTotalPrice = document.getElementById("modal-total-price");
+const startNewBtn = document.querySelector(".start-new-btn");
 
 let cart = [];
 
@@ -20,13 +24,14 @@ buttons.forEach((button) => {
 function addItem(productCard) {
     const name = productCard.dataset.name;
     const price = Number(productCard.dataset.price);
+    const thumbnail = productCard.dataset.thumbnail;
 
     const existingItem = cart.find((item) => item.name === name);
 
     if (existingItem) {
         existingItem.quantity++;
     } else {
-        cart.push({ name, price, quantity: 1 });
+        cart.push({ name, price, quantity: 1, thumbnail });
         productCard.classList.add("active");
     }
 
@@ -163,3 +168,43 @@ function resetProductButton(productCard) {
         addItem(productCard);
     });
 }
+
+confirmBtn.addEventListener("click", () => {
+    openModal();
+});
+
+function openModal() {
+    modalItems.innerHTML = "";
+
+    const total = cart.reduce((sum, item) => {
+        return sum + item.price * item.quantity;
+    }, 0);
+
+    modalTotalPrice.textContent = `$${total.toFixed(2)}`;
+
+    cart.forEach((item) => {
+        modalItems.innerHTML += `
+            <div class="modal-item">
+                <img src="${item.thumbnail}" alt="${item.name}">
+
+                <div class="modal-item-info">
+                    <h4>${item.name}</h4>
+                    <p>
+                        <span class="quantity">${item.quantity}x</span>
+                        <span class="unit-price">@ $${item.price.toFixed(2)}</span>
+                    </p>
+                </div>
+
+                <span class="modal-item-total">
+                    $${(item.price * item.quantity).toFixed(2)}
+                </span>
+            </div>
+        `;
+    });
+
+    modalOverlay.style.display = "flex";
+}
+
+startNewBtn.addEventListener("click", () => {
+    location.reload();
+});

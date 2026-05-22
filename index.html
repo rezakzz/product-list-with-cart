@@ -32,7 +32,7 @@
       <h1>Desserts</h1>
 
       <div class="product-container">
-        <div class="product-card" data-name="Waffle with Berries" data-price="6.50">
+        <div class="product-card" data-name="Waffle with Berries" data-price="6.50" data-thumbnail="./assets/images/image-waffle-thumbnail.jpg">
           <div class="image-box">
             <img src="./assets/images/image-waffle-desktop.jpg" alt="Waffle with Berries">
             <button class="cart-btn">
@@ -47,7 +47,7 @@
 
         </div>
 
-        <div class="product-card" data-name="Vanilla Bean Crème Brûlée" data-price="7.00">
+        <div class="product-card" data-name="Vanilla Bean Crème Brûlée" data-price="7.00" data-thumbnail="./assets/images/image-creme-brulee-thumbnail.jpg">
           <div class="image-box">
             <img src="./assets/images/image-creme-brulee-desktop.jpg" alt="Crème Brûlée">
             <button class="cart-btn">
@@ -61,7 +61,7 @@
           <p class="price">$7.00</p>
         </div>
 
-        <div class="product-card" data-name="Macaron Mix of Five" data-price="8.00  ">
+        <div class="product-card" data-name="Macaron Mix of Five" data-price="8.00" data-thumbnail="./assets/images/image-macaron-thumbnail.jpg">
           <div class="image-box">
             <img src="./assets/images/image-macaron-desktop.jpg" alt="Macaron">
             <button class="cart-btn">
@@ -75,7 +75,7 @@
           <p class="price">$8.00</p>
         </div>
 
-        <div class="product-card" data-name="Classic Tiramisu" data-price="5.50">
+        <div class="product-card" data-name="Classic Tiramisu" data-price="5.50" data-thumbnail="./assets/images/image-tiramisu-thumbnail.jpg">
           <div class="image-box">
             <img src="./assets/images/image-tiramisu-desktop.jpg" alt="Tiramisu">
             <button class="cart-btn">
@@ -89,7 +89,7 @@
           <p class="price">$5.50</p>
         </div>
 
-        <div class="product-card" data-name="Pistachio Baklava" data-price="4.00">
+        <div class="product-card" data-name="Pistachio Baklava" data-price="4.00" data-thumbnail="./assets/images/image-baklava-thumbnail.jpg">
           <div class="image-box">
             <img src="./assets/images/image-baklava-desktop.jpg" alt="Baklava">
             <button class="cart-btn">
@@ -103,7 +103,7 @@
           <p class="price">$4.00</p>
         </div>
 
-        <div class="product-card" data-name="Lemon Meringue Pie" data-price="5.00 ">
+        <div class="product-card" data-name="Lemon Meringue Pie" data-price="5.00" data-thumbnail="./assets/images/image-meringue-thumbnail.jpg">
           <div class="image-box">
             <img src="./assets/images/image-meringue-desktop.jpg" alt="Lemon Meringue Pie">
             <button class="cart-btn">
@@ -117,7 +117,7 @@
           <p class="price">$5.00</p>
         </div>
 
-        <div class="product-card" data-name="Red Velvet Cake" data-price="4.50  ">
+        <div class="product-card" data-name="Red Velvet Cake" data-price="4.50" data-thumbnail="./assets/images/image-cake-thumbnail.jpg">
           <div class="image-box">
             <img src="./assets/images/image-cake-desktop.jpg" alt="Red Velvet Cake">
             <button class="cart-btn">
@@ -131,7 +131,7 @@
           <p class="price">$4.50</p>
         </div>
 
-        <div class="product-card" data-name="Salted Caramel Brownie" data-price="4.50">
+        <div class="product-card" data-name="Salted Caramel Brownie" data-price="4.50" data-thumbnail="./assets/images/image-brownie-thumbnail.jpg">
           <div class="image-box">
             <img src="./assets/images/image-brownie-desktop.jpg" alt="Salted Caramel Brownie">
             <button class="cart-btn">
@@ -145,7 +145,7 @@
           <p class="price">$4.50</p>
         </div>
 
-        <div class="product-card" data-name="Vanilla Panna Cotta" data-price="6.50  ">
+        <div class="product-card" data-name="Vanilla Panna Cotta" data-price="6.50" data-thumbnail="./assets/images/image-panna-cotta-thumbnail.jpg">
           <div class="image-box">
             <img src="./assets/images/image-panna-cotta-desktop.jpg" alt="Vanilla Panna Cotta">
             <button class="cart-btn">
@@ -184,6 +184,24 @@
     </aside>
 
   </main>
+
+  <div class="modal-overlay" id="modal-overlay">
+    <div class="modal-box">
+      <img class="modal-icon" src="./assets/images/icon-order-confirmed.svg" alt="Order confirmed">
+
+      <h2>Order Confirmed</h2>
+      <p class="modal-subtitle">We hope you enjoy your food!</p>
+
+      <div id="modal-items"></div>
+
+      <div class="modal-total">
+        <p>Order Total</p>
+        <h3 id="modal-total-price">$0.00</h3>
+      </div>
+
+      <button class="start-new-btn">Start New Order</button>
+    </div>
+  </div>
 
   <footer class="attribution">
     Challenge by <a href="https://www.frontendmentor.io?ref=challenge">Frontend Mentor</a>.
