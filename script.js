@@ -3,6 +3,8 @@ const cartItems = document.getElementById("cart-items");
 const cartCount = document.getElementById("cart-count");
 const emptyImage = document.getElementById("empty-cart-image");
 const emptyText = document.getElementById("empty-cart-text");
+const totalPrice = document.getElementById("total-price");
+const orderTotal = document.querySelector(".order-total");
 
 let cart = [];
 
@@ -55,12 +57,20 @@ function updateCart() {
 
     cartItems.innerHTML = "";
 
+    const total = cart.reduce((sum, item) => {
+        return sum + item.price * item.quantity;
+    }, 0);
+
+    totalPrice.textContent = `$${total.toFixed(2)}`;
+
     if (cart.length > 0) {
         emptyImage.style.display = "none";
         emptyText.style.display = "none";
+        orderTotal.style.display = "flex";
     } else {
         emptyImage.style.display = "block";
         emptyText.style.display = "block";
+        orderTotal.style.display = "none";
     }
 
     cart.forEach((item) => {

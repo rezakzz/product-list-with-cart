@@ -239,6 +239,30 @@ h1 {
     filter: brightness(0) saturate(100%) invert(32%) sepia(98%) saturate(1400%) hue-rotate(6deg);
 }
 
+.order-total {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    margin-top: 24px;
+}
+
+.order-total p {
+    margin: 0;
+    font-size: 14px;
+    color: #87635a;
+}
+
+.order-total h3 {
+    margin: 0;
+    font-size: 28px;
+    color: #260f08;
+}
+
+.order-total {
+    display: none;
+}
+
 @media (max-width: 1200px) {
     .layout {
         padding: 32px;
