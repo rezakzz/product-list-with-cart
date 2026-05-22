@@ -76,7 +76,13 @@ function updateCart() {
     cart.forEach((item) => {
         cartItems.innerHTML += `
             <div class="cart-item">
-                <h4>${item.name}</h4>
+                <div class="cart-top">
+                    <h4>${item.name}</h4>
+
+                    <button class="remove-btn" data-name="${item.name}">
+                        <img src="./assets/images/icon-remove-item.svg" alt="Remove item">
+                    </button>
+                </div>
 
                 <div class="cart-details">
                     <span class="quantity">${item.quantity}x</span>
@@ -85,6 +91,22 @@ function updateCart() {
                 </div>
             </div>
         `;
+    });
+
+    document.querySelectorAll(".remove-btn").forEach((button) => {
+        button.addEventListener("click", () => {
+            const name = button.dataset.name;
+
+            cart = cart.filter((item) => item.name !== name);
+
+            const productCard = document.querySelector(
+                `.product-card[data-name="${name}"]`
+            );
+
+            productCard.classList.remove("active");
+            resetProductButton(productCard);
+            updateCart();
+        });
     });
 }
 
