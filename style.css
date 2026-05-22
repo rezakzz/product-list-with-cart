@@ -1,3 +1,7 @@
+* {
+    box-sizing: border-box;
+}
+
 @font-face {
     font-family: 'RedHatText';
     src: url('./assets/fonts/static/RedHatText-Regular.ttf');
@@ -140,7 +144,7 @@ h1 {
     padding-left: 0;
 }
 
-#cart-box img {
+#empty-cart-image {
     display: block;
     width: 140px;
     margin: 0 auto 16px;
@@ -239,7 +243,7 @@ h1 {
 }
 
 .order-total {
-    display: flex;
+    display: none;
     justify-content: space-between;
     align-items: center;
 
@@ -258,9 +262,6 @@ h1 {
     color: #260f08;
 }
 
-.order-total {
-    display: none;
-}
 
 .cart-top {
     display: flex;
@@ -448,6 +449,10 @@ h1 {
     cursor: pointer;
 }
 
+.image-box picture {
+    display: block;
+}
+
 @media (max-width: 1200px) {
     .layout {
         padding: 32px;
@@ -471,5 +476,23 @@ h1 {
     .cart-box {
         width: 100%;
         margin-top: 32px;
+        box-sizing: border-box;
+    }
+}
+
+@media (max-width: 768px) {
+    .modal-box {
+        width: 100%;
+        max-width: 100%;
+        min-height: 100vh;
+
+        border-radius: 16px 16px 0 0;
+
+        padding: 24px;
+        align-self: flex-end;
+    }
+
+    .modal-overlay {
+        align-items: flex-end;
     }
 }
