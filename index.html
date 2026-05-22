@@ -32,7 +32,7 @@
       <h1>Desserts</h1>
 
       <div class="product-container">
-        <div class="product-card">
+        <div class="product-card" data-name="Waffle with Berries" data-price="6.50">
           <div class="image-box">
             <img src="./assets/images/image-waffle-desktop.jpg" alt="Waffle with Berries">
             <button class="cart-btn">
@@ -47,7 +47,7 @@
 
         </div>
 
-        <div class="product-card">
+        <div class="product-card" data-name="Vanilla Bean Crème Brûlée" data-price="7.00">
           <div class="image-box">
             <img src="./assets/images/image-creme-brulee-desktop.jpg" alt="Crème Brûlée">
             <button class="cart-btn">
@@ -61,7 +61,7 @@
           <p class="price">$7.00</p>
         </div>
 
-        <div class="product-card">
+        <div class="product-card" data-name="Macaron Mix of Five" data-price="8.00  ">
           <div class="image-box">
             <img src="./assets/images/image-macaron-desktop.jpg" alt="Macaron">
             <button class="cart-btn">
@@ -75,7 +75,7 @@
           <p class="price">$8.00</p>
         </div>
 
-        <div class="product-card">
+        <div class="product-card" data-name="Classic Tiramisu" data-price="5.50">
           <div class="image-box">
             <img src="./assets/images/image-tiramisu-desktop.jpg" alt="Tiramisu">
             <button class="cart-btn">
@@ -89,7 +89,7 @@
           <p class="price">$5.50</p>
         </div>
 
-        <div class="product-card">
+        <div class="product-card" data-name="Pistachio Baklava" data-price="4.00">
           <div class="image-box">
             <img src="./assets/images/image-baklava-desktop.jpg" alt="Baklava">
             <button class="cart-btn">
@@ -103,7 +103,7 @@
           <p class="price">$4.00</p>
         </div>
 
-        <div class="product-card">
+        <div class="product-card" data-name="Lemon Meringue Pie" data-price="5.00 ">
           <div class="image-box">
             <img src="./assets/images/image-meringue-desktop.jpg" alt="Lemon Meringue Pie">
             <button class="cart-btn">
@@ -117,7 +117,7 @@
           <p class="price">$5.00</p>
         </div>
 
-        <div class="product-card">
+        <div class="product-card" data-name="Red Velvet Cake" data-price="4.50  ">
           <div class="image-box">
             <img src="./assets/images/image-cake-desktop.jpg" alt="Red Velvet Cake">
             <button class="cart-btn">
@@ -131,7 +131,7 @@
           <p class="price">$4.50</p>
         </div>
 
-        <div class="product-card">
+        <div class="product-card" data-name="Salted Caramel Brownie" data-price="4.50">
           <div class="image-box">
             <img src="./assets/images/image-brownie-desktop.jpg" alt="Salted Caramel Brownie">
             <button class="cart-btn">
@@ -145,7 +145,7 @@
           <p class="price">$4.50</p>
         </div>
 
-        <div class="product-card">
+        <div class="product-card" data-name="Vanilla Panna Cotta" data-price="6.50  ">
           <div class="image-box">
             <img src="./assets/images/image-panna-cotta-desktop.jpg" alt="Vanilla Panna Cotta">
             <button class="cart-btn">
@@ -164,8 +164,16 @@
 
     <aside class="cart-box">
       <h2>Your Cart (<span id="cart-count">0</span>)</h2>
-      <img src="./assets/images/illustration-empty-cart.svg" alt="Empty Cart Icon">
-      <p>Your added items will appear here</p>
+
+      <div id="cart-items"></div>
+
+      <img 
+        id="empty-cart-image"
+        src="./assets/images/illustration-empty-cart.svg" 
+        alt="Empty Cart Icon"
+        >
+
+      <p id="empty-cart-text">Your added items will appear here</p>
     </aside>
 
   </main>
